@@ -1,16 +1,16 @@
 jobs:
   include:
-#     - stage: "NO GPU"
-#       name: "there is no gpu used"
-#       dist: focal
-#       vm:
-#         size: 'medium'
-#       arch: 'amd64'
-#       script:
-#         - df -h
-#         - lspci
-#         - echo "It is done"
-    - stage: "GPU - with no addons"
+    - stage: "NO GPU"
+      name: "there is no gpu used"
+      dist: focal
+      vm:
+        size: 'medium'
+      arch: 'amd64'
+      script:
+        - df -h
+        - lspci
+        - python hello_world.py
+    - stage: "GPU - with no addons medium"
       name: "with no addons"
       dist: focal
       vm:
@@ -19,7 +19,7 @@ jobs:
       script:
         - df -h
         - lspci
-        - echo "It is done"
+        - python hello_world.py
     - stage: "GPU - with no addons x-large"
       name: "without addons x-large"
       dist: focal
@@ -29,7 +29,7 @@ jobs:
       script:
         - df -h
         - lspci
-        - echo "It is done"
+        - python hello_world.py
 #     - stage: "GPU - with no addons - Windows Build - No Run"
 #       name: "with no addons"
 #       os: windows
@@ -55,13 +55,13 @@ jobs:
 #         - lspci
 #         - python hello_world.py
 #     - stage: "Instal addons on linux"
-#       name: "addons on focal distribution gpu 2x-large"
+#       name: "addons on focal distribution gpu medium"
 #       dist: focal
 #       addons:
-#         tensorflow: 1.6.0
+#         tensorflow: 2.11.0
 #         blender: 3.4.1
 #       vm:
-#         size: 'gpu-2xlarge'
+#         size: 'gpu-medium'
 #       language: python
 #       python:
 #         - "3.9"
