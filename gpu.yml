@@ -55,7 +55,7 @@ jobs:
         - lspci
         - python hello_world.py
     - stage: "Instal addons on linux"
-      name: "addons on focal distribution gpu 2xlarge"
+      name: "addons on focal distribution gpu 2x-large"
       dist: focal
       addons:
         tensorflow: 1.6.0
