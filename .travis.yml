@@ -1,14 +1,10 @@
 os: linux
 dist: focal
-
 language: python
-rvm: 2.7.1
 
 branches:
   only:
   - main
-  - secure-test
-  - prd-gpu-support
 
 import:
   - gpu.yml
