@@ -1,16 +1,16 @@
 jobs:
   include:
-    - stage: "NO GPU"
-      name: "there is no gpu used"
-      dist: focal
-      vm:
-        size: 'medium'
-      arch: 'amd64'
-      script:
-        - df -h
-        - lspci
-        - echo "It is done"
-    - stage: "GPU - with no addons"
+#     - stage: "NO GPU"
+#       name: "there is no gpu used"
+#       dist: focal
+#       vm:
+#         size: 'medium'
+#       arch: 'amd64'
+#       script:
+#         - df -h
+#         - lspci
+#         - echo "It is done"
+    - stage: "GPU - with no addons medium"
       name: "with no addons"
       dist: focal
       vm:
@@ -42,7 +42,7 @@ jobs:
       name: "addons on focal distribution gpu xlarge"
       dist: focal
       addons:
-        tensorflow: 2.0.0
+        tensorflow: 1.14.0
         blender: 3.4.1
       vm:
         size: 'gpu-xlarge'
@@ -58,7 +58,7 @@ jobs:
       name: "addons on focal distribution gpu medium"
       dist: focal
       addons:
-        tensorflow: 2.0.0
+        tensorflow: 1.14.0
         blender: 3.4.1
       vm:
         size: 'gpu-medium'
