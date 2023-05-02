@@ -1,48 +1,48 @@
 jobs:
   include:
-    - stage: "NO GPU"
-      name: "there is no gpu used"
-      dist: focal
-      vm:
-        size: 'medium'
-      arch: 'amd64'
-      script:
-        - df -h
-        - lspci
-        - echo "It is done"
-    - stage: "GPU - with no addons medium"
-      name: "with no addons"
-      dist: focal
-      vm:
-        size: 'gpu-medium'
-      arch: 'amd64'
-      script:
-        - df -h
-        - lspci
-        - echo "It is done"
-    - stage: "GPU - with no addons x-large"
-      name: "without addons x-large"
-      dist: focal
-      vm:
-        size: 'gpu-xlarge'
-      arch: 'amd64'
-      script:
-        - df -h
-        - lspci
-        - echo "It is done"
-    - stage: "GPU - with no addons - Windows Build - No Run"
-      name: "with no addons"
-      os: windows
-      vm:
-        size: 'gpu-medium'
-      arch: 'amd64'
-      script:
-        - echo "No Build"
+#     - stage: "NO GPU"
+#       name: "there is no gpu used"
+#       dist: focal
+#       vm:
+#         size: 'medium'
+#       arch: 'amd64'
+#       script:
+#         - df -h
+#         - lspci
+#         - echo "It is done"
+#     - stage: "GPU - with no addons medium"
+#       name: "with no addons"
+#       dist: focal
+#       vm:
+#         size: 'gpu-medium'
+#       arch: 'amd64'
+#       script:
+#         - df -h
+#         - lspci
+#         - echo "It is done"
+#     - stage: "GPU - with no addons x-large"
+#       name: "without addons x-large"
+#       dist: focal
+#       vm:
+#         size: 'gpu-xlarge'
+#       arch: 'amd64'
+#       script:
+#         - df -h
+#         - lspci
+#         - echo "It is done"
+#     - stage: "GPU - with no addons - Windows Build - No Run"
+#       name: "with no addons"
+#       os: windows
+#       vm:
+#         size: 'gpu-medium'
+#       arch: 'amd64'
+#       script:
+#         - echo "No Build"
     - stage: "Instal addons on linux"
       name: "addons on focal distribution gpu xlarge"
       dist: focal
       addons:
-        tensorflow: 1.14.0
+        tensorflow: 2.6.2
         blender: 3.4.1
       vm:
         size: 'gpu-xlarge'
@@ -58,7 +58,7 @@ jobs:
       name: "addons on focal distribution gpu medium"
       dist: focal
       addons:
-        tensorflow: 1.14.0
+        tensorflow: 2.6.2
         blender: 3.4.1
       vm:
         size: 'gpu-medium'
